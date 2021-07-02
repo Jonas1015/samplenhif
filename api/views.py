@@ -90,8 +90,6 @@ class FacilitiesList(generics.ListAPIView):
 
 
 @api_view(['POST', ])
-@authentication_classes([])
-@permission_classes([])
 def FacilityCreateView(request):
     # Do this when you are saving the user object referenced in Facility table
     # user = User.objects.get(pk=1)
@@ -106,8 +104,6 @@ def FacilityCreateView(request):
 
 
 @api_view(['GET', ])
-@authentication_classes([])
-@permission_classes([])
 def FacilityDetailView(request, pk):
     facility_object =  Facility.objects.all()[0]
     facility = Facility.objects.get(id = facility_object.id)
@@ -121,8 +117,6 @@ def FacilityDetailView(request, pk):
 
 
 @api_view(['PUT', ])
-@authentication_classes([])
-@permission_classes([])
 def FacilityUpdateView(request, pk):
     try:
         Facility = Facility.objects.get(id = pk)
@@ -141,8 +135,6 @@ def FacilityUpdateView(request, pk):
 
 
 @api_view(['DELETE', ])
-@authentication_classes([])
-@permission_classes([])
 def FacilityDeleteView(request, pk):
     try:
         Facility = Facility.objects.get(id = pk)
