@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="table">
+          <table style="margin-left: 20%;">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>FullName</th>
+                <th>Password</th>
+                <th>FacilityCode</th>
+                <th>EmployerNo</th>
+                <th>TelephoneNo</th>
+                <th>EmailAddress</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if facilities %}
+              {% for facility in facilities %}
+              <tr>
+                <td>{{ facility.UserName }}</td>
+                <td>{{ facility.FullName }}</td>
+                <td>{{ facility.Password }}</td>
+                <td>{{ facility.FacilityCode }}</td>
+                <td>{{ facility.EmployerNo }}</td>
+                <td>{{ facility.TelephoneNo }}</td>
+                <td>{{ facility.EmailAddress }}</td>
+              </tr>
+              {% endfor %}
+              {% else %}
+              <tr>
+                <td>NO FACILITIES LOADED...</td>
+              </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock content %}
